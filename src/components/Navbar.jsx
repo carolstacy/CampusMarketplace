@@ -11,6 +11,7 @@ function Navbar() {
         <Link to="/login" style={styles.link}>Login</Link>
         <Link to="/register" style={styles.link}>Register</Link>
         <Link to="/profile" style={styles.link}>Profile</Link>
+        <Link to="/sell" style={styles.link}>Sell</Link>
       </div>
     </nav>
   );

@@ -2,99 +2,99 @@ import Navbar from "../components/Navbar";
 import CategoryCard from "../components/CategoryCard";
 import ProductCard from "../components/ProductCard";
 import Footer from "../components/Footer";
-
 function Home() {
   return (
-    <main>
+    <>
       <Navbar />
 
-      <section style={styles.hero}>
-        <h1>Welcome to Campus Marketplace</h1>
+      {/* Hero Section */}
+      <section className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-20">
+        <div className="max-w-6xl mx-auto px-6 text-center">
+          <h1 className="text-5xl font-bold mb-6">
+            Buy & Sell on Campus
+          </h1>
 
-        <p>
-          Buy and sell textbooks, electronics, furniture, clothes and more
-          within your campus community.
-        </p>
+          <p className="text-xl mb-8">
+            Find textbooks, laptops, furniture, clothes and hostel essentials
+            from students around your campus.
+          </p>
 
-        <button style={styles.button}>Browse Products</button>
+          <div className="flex justify-center gap-4">
+            <button className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold">
+              Browse Products
+            </button>
+
+            <button className="border border-white px-6 py-3 rounded-lg">
+              Sell an Item
+            </button>
+          </div>
+        </div>
       </section>
-      <section style={styles.categories}>
-        <h2>Browse Categories</h2>
+      {/* Search Section */}
+<section className="bg-white py-10 shadow-sm">
+  <div className="max-w-4xl mx-auto px-6">
+    <div className="flex flex-col md:flex-row gap-4">
+      <input
+        type="text"
+        placeholder="Search for books, laptops, furniture..."
+        className="flex-1 border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
 
-        <div style={styles.grid}>
+      <button className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700">
+        Search
+      </button>
+    </div>
+  </div>
+</section>
+
+      {/* Categories */}
+      <section className="max-w-6xl mx-auto py-16 px-6">
+        <h2 className="text-3xl font-bold text-center mb-10">
+          Browse Categories
+        </h2>
+
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
           <CategoryCard title=" Books" />
           <CategoryCard title=" Electronics" />
           <CategoryCard title=" Furniture" />
           <CategoryCard title=" Clothing" />
-          <CategoryCard title=" Hostel Essentials" />
+          <CategoryCard title=" Hostel" />
           <CategoryCard title=" Others" />
         </div>
       </section>
-      <section style={styles.products}>
-        <h2>Featured Products</h2>
 
-        <div style={styles.grid}>
-          <ProductCard
-            name="Programming Textbook"
-            price="1500"
-            seller="John"
-          />
+      {/* Featured Products */}
+      <section className="bg-gray-100 py-16">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-3xl font-bold text-center mb-10">
+            Featured Products
+          </h2>
 
-          <ProductCard
-            name="HP Laptop"
-            price="35000"
-            seller="Mary"
-          />
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <ProductCard
+              name="Programming Textbook"
+              price="1500"
+              seller="John"
+            />
 
-          <ProductCard
-            name="Study Desk"
-            price="4500"
-            seller="Brian"
-          />
+            <ProductCard
+              name="HP Laptop"
+              price="35000"
+              seller="Mary"
+            />
+
+            <ProductCard
+              name="Study Desk"
+              price="4500"
+              seller="Brian"
+            />
+          </div>
         </div>
       </section>
-<section style={styles.products}>
-  </section>
-  <Footer />
-    </main>
+
+      <Footer />
+    </>
   );
 }
-
-const styles = {
-  hero: {
-    textAlign: "center",
-    padding: "80px 20px",
-    backgroundColor: "#f4f4f4",
-    minHeight: "80vh",
-  },
-
-  button: {
-    marginTop: "20px",
-    padding: "12px 25px",
-    backgroundColor: "#2563eb",
-    color: "white",
-    border: "none",
-    borderRadius: "8px",
-    cursor: "pointer",
-    fontSize: "16px",
-  },
-  categories: {
-    padding: "50px 20px",
-    textAlign: "center",
-  },
-
-  grid: {
-    display: "grid",
-    gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
-    gap: "20px",
-    marginTop: "30px",
-  },
-
-  products: {
-    padding: "50px 20px",
-    textAlign: "center",
-  },
-
-};
 
 export default Home;

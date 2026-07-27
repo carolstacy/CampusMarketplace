@@ -1,46 +1,32 @@
-function ProductCard({ name, price, seller }) {
+import { Link } from "react-router-dom";
+function ProductCard({ name, price, seller, image }) {
   return (
-    <div style={styles.card}>
+    <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition duration-300 overflow-hidden">
       <img
-        src="https://via.placeholder.com/250x180"
+        src={image}
         alt={name}
-        style={styles.image}
+        className="w-full h-48 object-cover"
       />
 
-      <h3>{name}</h3>
+      <div className="p-5">
+        <h3 className="text-xl font-bold">{name}</h3>
 
-      <p><strong>KSh {price}</strong></p>
+        <p className="text-blue-600 font-semibold text-lg mt-2">
+          KSh {price}
+        </p>
 
-      <p>Seller: {seller}</p>
+        <p className="text-gray-500 mt-1">
+          Seller: {seller}
+        </p>
 
-      <button style={styles.button}>View Details</button>
+        <Link to="/product/1">
+  <button className="mt-5 w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition">
+    View Details
+  </button>
+</Link>
+      </div>
     </div>
   );
 }
-
-const styles = {
-  card: {
-    backgroundColor: "#fff",
-    borderRadius: "10px",
-    padding: "15px",
-    boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
-    textAlign: "center",
-  },
-
-  image: {
-    width: "100%",
-    borderRadius: "8px",
-  },
-
-  button: {
-    marginTop: "10px",
-    backgroundColor: "#2563eb",
-    color: "white",
-    border: "none",
-    padding: "10px 15px",
-    borderRadius: "5px",
-    cursor: "pointer",
-  },
-};
 
 export default ProductCard;
